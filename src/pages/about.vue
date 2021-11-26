@@ -3,7 +3,7 @@
 <img class="w-40 h-20" src="/src/assets/aboutimage.png" alt="Home Image"/>
 </div>
 <div class="flex flex-col items-center mx-auto text-red-700">
-<div ><img class="h-60 px-80 py-3" src="src/assets/aboutusimage.jpg" alt="About IMG"></div>
+<div ><img class="h-60 px-80 py-3" src="/src/assets/aboutusimage.jpg" alt="About IMG"></div>
 </div>
 <div class="mx-auto text-red-700">
 <h3 class="text-4xl">At Extreme Cuts we have the best barbers in the valley! All of our ten barber are licensed.</h3>
