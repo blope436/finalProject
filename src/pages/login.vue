@@ -3,15 +3,20 @@ import {ref} from "vue";
 
 import { useRouter } from "vue-router";
 
-import authorize from "../composable/authorize";
+import loginauthorize from "../composable/loginauthorize";
 
-const {authStatus, signin} = authorize();
+import {names,emails} from "../composable/loginauthorize";
+
+import {fullname, username,phonenumber, enterdate, apptime, barbers, comments} from "../composable/authorize";
+
+const {loginStatus,login, logout} = loginauthorize();
 
 const router = useRouter();
 
-const submitButton = async () => {
-    await signin(names.value, emails.value)
-    if (authStatus.value)
+
+const submitButton = () => {
+    login(names.value, emails.value)
+    if (loginStatus.value)
     {
         router.push("/");
     }
@@ -30,6 +35,7 @@ const clear = () => {
     <h1>Welcome to the login page!</h1>
     <h1>Here you will enter the information that you entered when you made an appointment</h1>
     <h1>You must make an appointment to continue. When you login you will be able to access the Appointment Information page.</h1>
+    <h2 class="py-3 text-black border-4 border-blue-500">Loggged In: {{loginStatus}}</h2>
 </div>
 <div class="flex flex-col items-center mx-auto text-red-700">
 <div ><img class="h-60 px-80 py-3" src="/src/assets/loginimage2.jpg" alt="Login IMG"></div>
@@ -43,7 +49,7 @@ const clear = () => {
         <input required id="emails" name="emails" type="text" class="rounded-lg border-4" placeholder="Enter Email Address" v-model="emails"/>
         </div>
         <div class="space-x-2">
-        <button @submit.prevent="submitButton" class="bg-blue-500 text-black">Submit</button>
+        <button id="submitButton" @submit.prevent="submitButton" class="bg-blue-500 text-black">Submit</button>
         <button @click="clear()" class="bg-red-500 text-black">Cancel</button>
         </div>
     </form>

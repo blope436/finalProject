@@ -2,29 +2,35 @@ import {ref} from "vue";
 
 const authStatus = ref(false);
 
-const customerInfo = ref("");
+const fullname = ref("");
 
-const customerInfoFromDB = [{fullname: "", username: "", phonenumber: "", enterdate : "", apptime : "", barbers : "", comments : ""}];
+const username = ref("");
+
+const phonenumber = ref("");
+
+const enterdate = ref("");
+
+const apptime = ref("");
+
+const barbers = ref("");
+
+const comments = ref("");
 
 const authorize = () => {
+
     const signin = (fullname, username, phonenumber, enterdate, apptime, barbers, comments) =>
     {
-        const customersInfoFromDB = customerInfoFromDB.find(
-            (customerInfo) => customerInfo.fullname === fullname && customerInfo.username === username && customerInfo.phonenumber === phonenumber && customerInfo.enterdate === enterdate && customerInfo.apptime === apptime && customerInfo.barbers === barbers && customerInfo.comments === comments 
-        )
-        if(customersInfoFromDB)
-    {
-        authStatus.value = true;
-        customerInfo.value = customersInfoFromDB.fullname;
-    }
+        
+            authStatus.value = true;
     };
     
     const signout = () => {
         authStatus.value = false;
-        customerInfo.value ="";
     };
     return {authStatus, signin, signout}
 };
 
+
 export default authorize;
+export {fullname, username, phonenumber, enterdate, apptime, barbers, comments}
 
