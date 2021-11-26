@@ -1,6 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
 
-import loginauthorize from "/src/composable/authorize"
+import loginauthorize from "/src/composable/loginauthorize"
 
 import Index from "./pages/index.vue"
 import About from "./pages/about.vue"
@@ -42,7 +42,7 @@ const routes = [{
     name: "AppointmentInformation",
     component: AppointmentInformation,
     beforeEnter: (to, from, next) => {
-        console.log(loginStatus);
+
         if (!loginStatus.value)
         {
             next("/login");
