@@ -15,7 +15,7 @@ import {fullname, username,phonenumber, enterdate, apptime, barbers, comments} f
 <div class="mx-auto text-red-700">
     <div class="text-3xl text-center py-11 border-black border-8 rounded-xl">
         <h1 class="text-5xl py-11 border-b-4 border-black">Appointment Info</h1>
-        <p class="py-8 border-b-4 border-gray-500">FullName: {{fullname}}</p>
+        <p class="py-8 border-b-4 border-gray-500">Full Name: {{fullname}}</p>
         <p class="py-8 border-b-4 border-gray-500">Email Address: {{username}}</p>
         <p class="py-8 border-b-4 border-gray-500">Phone Number: {{phonenumber}}</p>
         <p class="py-8 border-b-4 border-gray-500">Appointment Date: {{enterdate}}</p>

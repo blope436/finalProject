@@ -8,6 +8,7 @@ import Appointments from "./pages/appointments.vue"
 import Contact from "./pages/contacts.vue"
 import Login from "./pages/login.vue"
 import AppointmentInformation from "./pages/appointmentInformation.vue"
+import Reviews from "./pages/reviews.vue"
 import PageNotFound404 from "./pages/404.vue"
 
 const {loginStatus} = loginauthorize();
@@ -49,6 +50,11 @@ const routes = [{
         }
         next();
     },
+},
+{
+    path: "/reviews",
+    name: "Reviews",
+    component: Reviews,
 },
 {
     path: "/:pathMatch(.*)*",

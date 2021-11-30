@@ -12,12 +12,15 @@ const loginauthorize = () => {
 
     const login = (names, emails) =>
     {
-           
+            if(names == fullname.value && emails == username.value)
+            {
             loginStatus.value = true;
-           
+            }
 
         
     };
+
+    
     
     const logout = () => {
         loginStatus.value = false;
