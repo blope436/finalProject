@@ -5,7 +5,13 @@ import useReview from '../composable/useReview';
 
 import {author} from '../composable/useReview'
 
+import {names} from "../composable/loginauthorize"
+
+import loginauthorize from "../composable/loginauthorize";
+
 const {reviews, unsubscribe, sendReview} = useReview();
+
+const {loginStatus} = loginauthorize();
 
 const newReview = ref('');
 
@@ -18,6 +24,13 @@ const send = () => {
 onUnmounted(() => {
     unsubscribe()
 })
+
+const sendname = () => {
+    if(loginStatus)
+    {
+        author.value = names.value;
+    }
+}
 
 </script>
 <template>
@@ -37,7 +50,7 @@ onUnmounted(() => {
     </ul>
     <div>
         <h1 class="text-red-500 text-4xl py-4">Name and Message are required fields. Anybody can submit a review! Press enter to submit.</h1>
-        <input required class="w-96 p-3 rounded-xl focus:outline-none focus:bg-red-100 mb-5" type="text" placeholder="Enter Name Here" v-model="author"/>
+        <input @click="sendname()" required class="w-96 p-3 rounded-xl focus:outline-none focus:bg-red-100 mb-5" type="text" placeholder="Enter Name Here" v-model="author"/>
         <input required class="w-full min-h-[100px] p-5 rounded-xl focus:outline-none focus:bg-red-100" type="text" placeholder="Type a message here" v-model="newReview" @change="send"/>
     </div>
 </div>
