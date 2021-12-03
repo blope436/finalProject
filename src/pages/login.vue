@@ -7,12 +7,11 @@ import loginauthorize from "../composable/loginauthorize";
 
 import {names,emails} from "../composable/loginauthorize";
 
-import {fullname, username,phonenumber, enterdate, apptime, barbers, comments} from "../composable/authorize";
+import {fullname, username} from "../composable/authorize";
 
-const {loginStatus,login, logout} = loginauthorize();
+const {loginStatus,login} = loginauthorize();
 
 const router = useRouter();
-
 
 const submitButton = () => {
     login(names.value, emails.value)
@@ -26,6 +25,7 @@ const clear = () => {
     names.value = "";
     emails.value = "";
 }
+
 </script>
 <template>
 <div class="flex items-center justify-center text-red-500 text-5xl text-center bg-gray-500">
@@ -40,6 +40,10 @@ const clear = () => {
 <div class="flex flex-col items-center mx-auto text-red-700">
 <div ><img class="h-60 px-80 py-3" src="/src/assets/loginimage2.jpg" alt="Login IMG"></div>
 </div>
+
+<h2 v-if="fullname !== names" class="bg-pink-300 mx-auto text-center w-40 py-4 border-4 border-red-900">Name not found</h2>
+<h2 v-if="emails !== username" class="bg-pink-300 mx-auto text-center w-40 py-4 border-4 border-red-900">Email Address not found</h2>
+
 <div class="flex justify-center mx-auto text-red-700">
     <form @submit.prevent="submitButton" class="text-center text-xl space-y-7 py-3 ">
         <img class="h-10 rounded-lg mx-auto" src="/src/assets/loginicon.png" alt="Name"/>

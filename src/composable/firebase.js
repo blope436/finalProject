@@ -8,3 +8,5 @@ export const firebaseApp = initializeApp(firebaseConfig)
 export const firebaseAuth = getAuth(firebaseApp)
 export const reviewdb = getFirestore()
 
+export const infodb = getFirestore();
+
