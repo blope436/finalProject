@@ -19,7 +19,7 @@ import {fullname, username,phonenumber, enterdate, apptime, barbers, comments} f
         <p class="py-8 border-b-4 border-gray-500">Email Address: {{username}}</p>
         <p class="py-8 border-b-4 border-gray-500">Phone Number: {{phonenumber}}</p>
         <p class="py-8 border-b-4 border-gray-500">Appointment Date: {{enterdate}}</p>
-        <p class="py-8 border-b-4 border-gray-500">Scheduled Time: {{apptime}}</p>
+        <p class="py-8 border-b-4 border-gray-500">Scheduled Time(Military Time): {{apptime}}</p>
         <p class="py-8 border-b-4 border-gray-500">Selected Barber: {{barbers}}</p>
         <p class="py-8">Optional Comments: {{comments}}</p>
     </div>
