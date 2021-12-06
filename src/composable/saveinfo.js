@@ -30,10 +30,11 @@ const saveinfo = () => {
             fullname: fullname.value,
             phoneNumber: phonenumber.value,
             time: apptime.value
-            
+
         })
     }
 
     return {unsubscribe, sendInformation}
 }
 export default saveinfo;
+
