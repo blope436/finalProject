@@ -95,7 +95,7 @@ const checkdate = () => {
     <form @submit.prevent="submitButton" class="text-center text-xl space-x-3 space-y-4 py-7">
         <input required id="fullnames" type="text" class="rounded-lg border-4" placeholder="Enter Full Name" v-model="fullname"/>
         <input required id="usernames" type="email" class="rounded-lg border-4" placeholder="Enter Email address" v-model="username"/>
-        <input required id="phonenumbers" type="tel" class="rounded-lg border-4" placeholder="Phone: (111)111-1111" v-model="phonenumber"/>
+        <input required id="phonenumbers" type="tel" pattern="\d*" title="You must enter numbers only- No special characters or letters" class="rounded-lg border-4" placeholder="Phone: 1111111111" v-model="phonenumber"/>
         <h1 class="text-2xl text-black">Enter desired date for appointment:</h1>
         <input required @change="checkdate()" id="enterdates" type="date" class="rounded-lg border-4" v-model="enterdate"/>
         <div class="space-x-3 space-y-5">
