@@ -54,26 +54,38 @@ const checkdate = () => {
     const days = new Date(enterdates.value);
     const currentday = new Date();
 
+    const yesterday = new Date(currentday);
+
+    yesterday.setDate(yesterday.getDate() - 1);
+
     let day = days.getDay();
 
-    let newdate = currentday.getFullYear();
+    let currentyear = currentday.getFullYear();
 
-    let newdate2 = days.getFullYear();
+    let chosenyear = days.getFullYear();
 
-    let newdate3 = currentday.getMonth() + 1;
+    let currentmonth = currentday.getMonth() + 1;
 
-    let newdate4 = days.getMonth() + 1;
+    let chosenmonth = days.getMonth() + 1;
+
+    let currentdays = currentday.getDate() + 1;
+
+    let chosenday = days.getDate() + 1;
+
+    let yesterdayday = yesterday.getDate();
 
     if(day === 6)
     {
         enterdate.value = "";
         window.alert("Enter a correct date. Must be from Monday-Saturday.")
     }
-    else if(newdate3 > newdate4 && newdate >= newdate2)
+    else if(currentmonth > chosenmonth && currentyear >= chosenyear || chosenday === yesterdayday && currentmonth === chosenmonth || chosenmonth === currentmonth && chosenday < currentdays)
     { 
         enterdate.value = "";
         window.alert("You cannot enter a date after today's.");
     }
+    
+
 }
 
 </script>
