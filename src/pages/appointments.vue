@@ -68,7 +68,7 @@ const checkdate = () => {
 
     let chosenmonth = days.getMonth() + 1;
 
-    let currentdays = currentday.getDate() + 1;
+    let currentdays = currentday.getDate();
 
     let chosenday = days.getDate() + 1;
 
