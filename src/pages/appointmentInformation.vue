@@ -1,6 +1,4 @@
 <script setup>
-import {ref} from "vue";
-import authorize from "../composable/authorize";
 
 import {fullname, username,phonenumber, enterdate, apptime, barbers, comments} from "../composable/authorize";
 
